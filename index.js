@@ -9,7 +9,7 @@ exports = module.exports = operator;
  * Expose `collection`.
  */
 
-exports.collection = {};
+exports.collection = [];
 
 /**
  * Define/get an operator.
@@ -19,7 +19,9 @@ function operator(name, fn) {
   if (!fn && exports.collection[name])
     return exports.collection[name];
 
-  return exports.collection[name] = fn;
+  exports.collection[name] = fn;
+  exports.collection.push(name);
+  return fn;
 }
 
 // inspired from https://github.com/angular/angular.js/blob/master/src/ng/parse.js
