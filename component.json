@@ -1,6 +1,6 @@
 {
   "name": "tower-operator",
-  "repo": "tower-operator",
+  "repo": "tower/operator",
   "description": "Tower Operator component",
   "version": "0.0.1",
   "keywords": [],

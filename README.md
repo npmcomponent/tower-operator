@@ -13,7 +13,7 @@ $ npm install tower-operator
 browser:
 
 ```bash
-$ component install tower-operator
+$ component install tower/operator
 ```
 
 ## Example
