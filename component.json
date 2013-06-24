@@ -2,7 +2,7 @@
   "name": "tower-operator",
   "repo": "tower/operator",
   "description": "Tower Operator component",
-  "version": "0.1.0pre",
+  "version": "0.1.0",
   "keywords": [],
   "development": {
     "component/assert": "*",
