@@ -1,5 +1,11 @@
 
 /**
+ * Module dependencies.
+ */
+
+var noop = function(){};
+
+/**
  * Expose `operator`.
  */
 
@@ -24,7 +30,6 @@ function operator(name, fn) {
   return fn;
 }
 
-// inspired from https://github.com/angular/angular.js/blob/master/src/ng/parse.js
 operator('null', function(){
   return null;
 });
@@ -37,41 +42,159 @@ operator('false', function(){
   return false;
 });
 
-var noop = function(){};
-
 operator('undefined', noop);
 
-operator('+', function(self, locals, a, b){
-  a = a(self, locals);
-  b = b(self, locals);
+/**
+ * Addition.
+ */
 
-  if (undefined !== a) {
-    return undefined !== b
-      ? a + b
-      : a;
-  }
-  return undefined !== b
-    ? b
-    : undefined;
+operator('+', function(a, b){
+  return a + b;
 });
 
-// XXX: todo
-operator('-');
-operator('*');
-operator('/');
-operator('%');
-operator('^');
+/**
+ * Subtraction.
+ */
+
+operator('-', function(a, b){
+  return a - b;
+});
+
+/**
+ * Multiplication.
+ */
+
+operator('*', function(a, b){
+  return a * b;
+});
+
+/**
+ * Division.
+ */
+
+operator('/', function(a, b){
+  return a / b;
+});
+
+/**
+ * Modulo.
+ */
+
+operator('%', function(a, b){
+  return a % b;
+});
+
+/**
+ * Exponential.
+ */
+
+operator('^', function(a, b){
+  return Math.pow(a, b);
+});
+
+// XXX
 operator('=');
-operator('===');
-operator('!==');
-operator('==');
-operator('!=');
-operator('<=');
-operator('<');
-operator('>');
-operator('>=');
-operator('&&');
-operator('||');
-operator('&');
-operator('|');
-operator('!');
+
+/**
+ * Strict equality.
+ */
+
+operator('===', function(a, b){
+  return a === b;
+});
+
+/**
+ * Strict inequality.
+ */
+
+operator('!==', function(a, b){
+  return a !== b;
+});
+
+/**
+ * Equality.
+ */
+
+operator('==', function(a, b){
+  return a == b;
+});
+
+/**
+ * Inequality.
+ */
+
+operator('!=', function(a, b){
+  return a != b;
+});
+
+/**
+ * Less than or equal to.
+ */
+
+operator('<=', function(a, b){
+  return a <= b;
+});
+
+/**
+ * Less than.
+ */
+
+operator('<', function(a, b){
+  return a < b;
+});
+
+/**
+ * Greater than.
+ */
+
+operator('>', function(a, b){
+  return a === b;
+});
+
+/**
+ * Greater than or equal to.
+ */
+
+operator('>=', function(a, b){
+  return a >= b;
+});
+
+/**
+ * Logical AND.
+ */
+
+operator('&&', function(a, b){
+  return a && b;
+});
+
+/**
+ * Logical OR.
+ */
+
+operator('||', function(a, b){
+  return a || b;
+});
+
+/**
+ * Bitwise AND.
+ */
+
+operator('&', function(a, b){
+  return a & b;
+});
+
+/**
+ * Bitwise OR.
+ */
+
+operator('|', function(a, b){
+  return a | b;
+});
+
+/**
+ * Not.
+ */
+
+operator('!', function(val){
+  return !val;
+});

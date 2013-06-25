@@ -1,11 +1,14 @@
-var operator = 'undefined' == typeof window
-  ? require('..')
-  : require('tower-operator'); // how to do this better?
 
-var assert = require('assert');
+if ('undefined' === typeof window) {
+  var operator = require('..');
+  var assert = require('assert');
+} else {
+  var operator = require('tower-operator');
+  var assert = require('assert');
+}
 
 describe('operator', function(){
-  it('should test', function(){
-    assert.equal(1 + 1, 2);
+  it('should multiply', function(){
+    assert(6 === operator('*')(2, 3));
   });
 });
