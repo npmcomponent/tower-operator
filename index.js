@@ -13,6 +13,9 @@ exports.collection = [];
 
 /**
  * Define/get an operator.
+ *
+ * @param {String} name
+ * @param {Function} fn Implementing the operator.
  */
 
 function operator(name, fn) {
@@ -24,20 +27,36 @@ function operator(name, fn) {
   return fn;
 }
 
+/**
+ * Null.
+ */
+
 operator('null', function(){
   return null;
 });
+
+/**
+ * True boolean.
+ */
 
 operator('true', function(){
   return true;
 });
 
+/**
+ * False boolean.
+ */
+
 operator('false', function(){
   return false;
 });
 
+/**
+ * Undefined.
+ */
+
 operator('undefined', function(){
-  
+
 });
 
 /**
