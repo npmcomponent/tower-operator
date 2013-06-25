@@ -1,11 +1,5 @@
 
 /**
- * Module dependencies.
- */
-
-var noop = function(){};
-
-/**
  * Expose `operator`.
  */
 
@@ -42,7 +36,9 @@ operator('false', function(){
   return false;
 });
 
-operator('undefined', noop);
+operator('undefined', function(){
+  
+});
 
 /**
  * Addition.
