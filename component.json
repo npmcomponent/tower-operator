@@ -2,7 +2,7 @@
   "name": "tower-operator",
   "repo": "tower/operator",
   "description": "Tower Operator component",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "keywords": [],
   "development": {
     "component/assert": "*",
@@ -11,10 +11,5 @@
   "scripts": [
     "index.js"
   ],
-  "license": "MIT",
-  "dependents": {
-    "tower/directive-expressions": "*",
-    "tower/expression": "*",
-    "tower/filter": "*"
-  }
+  "license": "MIT"
 }
