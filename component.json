@@ -8,6 +8,13 @@
     "component/assert": "*",
     "visionmedia/mocha": "*"
   },
-  "scripts": ["index.js"],
-  "license": "MIT"
+  "scripts": [
+    "index.js"
+  ],
+  "license": "MIT",
+  "dependents": {
+    "tower/directive-expressions": "*",
+    "tower/expression": "*",
+    "tower/filter": "*"
+  }
 }
